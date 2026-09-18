@@ -1,0 +1,25 @@
+<h1>ゲーム詳細</h1>
+
+<p>
+  <strong>タイトル：</strong>
+  <%= @game.title %>
+</p>
+
+<p>
+  <strong>ジャンル：</strong>
+  <%= @game.genre %>
+</p>
+
+<p>
+  <strong>評価：</strong>
+  <%= @game.rating %>
+</p>
+
+<%= link_to "編集", edit_game_path(@game) %>
+
+<%= button_to "削除",
+      game_path(@game),
+      method: :delete,
+      data: { turbo_confirm: "本当に削除しますか？" } %>
+
+<%= link_to "一覧に戻る", games_path %>

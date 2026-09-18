@@ -1,0 +1,30 @@
+<h1>ゲーム一覧</h1>
+
+<p>
+  <%= link_to "ゲームを登録", new_game_path %>
+</p>
+
+<table border="1">
+  <tr>
+    <th>タイトル</th>
+    <th>ジャンル</th>
+    <th>評価</th>
+    <th>操作</th>
+  </tr>
+
+  <% @games.each do |game| %>
+    <tr>
+      <td><%= game.title %></td>
+      <td><%= game.genre %></td>
+      <td><%= game.rating %></td>
+      <td>
+        <%= link_to "詳細", game_path(game) %>
+        <%= link_to "編集", edit_game_path(game) %>
+        <%= button_to "削除",
+              game_path(game),
+              method: :delete,
+              data: { turbo_confirm: "本当に削除しますか？" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
