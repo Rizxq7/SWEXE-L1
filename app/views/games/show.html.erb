@@ -1,25 +1,36 @@
-<h1>ゲーム詳細</h1>
+<div class="container">
+  <h1>ゲーム詳細</h1>
 
-<p>
-  <strong>タイトル：</strong>
-  <%= @game.title %>
-</p>
+  <div class="card">
+    <div class="detail-row">
+      <span class="detail-label">タイトル</span>
+      <span><%= @game.title %></span>
+    </div>
 
-<p>
-  <strong>ジャンル：</strong>
-  <%= @game.genre %>
-</p>
+    <div class="detail-row">
+      <span class="detail-label">ジャンル</span>
+      <span><%= @game.genre %></span>
+    </div>
 
-<p>
-  <strong>評価：</strong>
-  <%= @game.rating %>
-</p>
+    <div class="detail-row">
+      <span class="detail-label">評価</span>
+      <span class="rating">
+        <%= "★" * @game.rating %>
+        <%= @game.rating %> / 5
+      </span>
+    </div>
+  </div>
 
-<%= link_to "編集", edit_game_path(@game) %>
+  <div class="detail-actions">
+    <%= link_to "編集", edit_game_path(@game), class: "btn btn-edit" %>
 
-<%= button_to "削除",
-      game_path(@game),
-      method: :delete,
-      data: { turbo_confirm: "本当に削除しますか？" } %>
+    <%= button_to "削除",
+          game_path(@game),
+          method: :delete,
+          class: "btn btn-delete",
+          form: { class: "delete-form" },
+          data: { turbo_confirm: "本当に削除しますか？" } %>
 
-<%= link_to "一覧に戻る", games_path %>
+    <%= link_to "一覧に戻る", games_path, class: "btn btn-back" %>
+  </div>
+</div>

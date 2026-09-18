@@ -1,10 +1,204 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f6f8;
+  color: #333333;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+h1 {
+  margin-bottom: 25px;
+  color: #222222;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* テーブル */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+th,
+td {
+  padding: 15px;
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+}
+
+th {
+  background-color: #eeeeee;
+}
+
+tr:hover {
+  background-color: #f8f8f8;
+}
+
+/* カード */
+.card {
+  padding: 25px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* フォーム */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-actions {
+  margin-top: 25px;
+}
+
+.form-actions input {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary,
+.btn-show {
+  background-color: #2563eb;
+}
+
+.btn-edit {
+  background-color: #16a34a;
+}
+
+.btn-delete {
+  background-color: #dc2626;
+}
+
+.btn-back {
+  background-color: #6b7280;
+}
+
+.actions {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.delete-form {
+  display: inline-block;
+  margin: 0;
+}
+
+/* 評価 */
+.rating {
+  color: #e6a700;
+}
+
+.rating span {
+  color: #555555;
+  margin-left: 5px;
+}
+
+/* 詳細 */
+.detail-row {
+  padding: 15px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.detail-label {
+  display: inline-block;
+  width: 120px;
+  font-weight: bold;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Flash */
+.flash {
+  width: 90%;
+  max-width: 860px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.flash.notice {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.flash.alert {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* 入力エラー */
+.error-box {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #fca5a5;
+  border-radius: 5px;
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.error-box h3 {
+  margin-top: 0;
+}
+
+.empty-message {
+  padding: 30px;
+  background-color: white;
+  text-align: center;
+  color: #666666;
+}
+
+.back-link {
+  margin-top: 20px;
+}

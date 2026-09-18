@@ -1,26 +1,11 @@
-<h1>ゲーム編集</h1>
+<div class="container">
+  <h1>ゲーム情報の編集</h1>
 
-<%= form_with model: @game do |form| %>
+  <div class="card">
+    <%= render "form", game: @game %>
+  </div>
 
-  <p>
-    <%= form.label :title, "タイトル" %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label :genre, "ジャンル" %><br>
-    <%= form.text_field :genre %>
-  </p>
-
-  <p>
-    <%= form.label :rating, "評価" %><br>
-    <%= form.select :rating, 1..5 %>
-  </p>
-
-  <p>
-    <%= form.submit "更新" %>
-  </p>
-
-<% end %>
-
-<%= link_to "一覧に戻る", games_path %>
+  <div class="back-link">
+    <%= link_to "← 一覧に戻る", games_path %>
+  </div>
+</div>
