@@ -25,7 +25,13 @@ test:
 production:
   primary:
     <<: *default
-    database: storage/production.sqlite3
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    database: mysite_4590
+    username: mysite_4590_user
+    password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+    url: <%= ENV['DATABASE_URL'] %>
   cache:
     <<: *default
     database: storage/production_cache.sqlite3
